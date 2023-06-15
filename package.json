@@ -1,0 +1,13 @@
+{
+  "name": "redis-store-app",
+  
+  "dependencies": {
+    "express": "^4.18.2",
+    "ip": "^1.1.8",
+    "body-parser": "^1.19.0",
+    "connect-redis": "^5.0.0",
+    "express-session": "^1.17.1",
+    "nodemon": "^2.0.6",
+    "redis": "^3.0.2"
+  }
+}
