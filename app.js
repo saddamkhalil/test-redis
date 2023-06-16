@@ -13,7 +13,7 @@ const RedisStore = connectRedis(session)
 
 //Configure redis client
 const redisClient = redis.createClient({
-  host: 'redis-cluster-node-app.5lwcbq.ng.0001.use1.cache.amazonaws.com',
+  host: 'testredissaddam.5lwcbq.ng.0001.use1.cache.amazonaws.com',
   port: 6379
 })
 
