@@ -11,9 +11,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('trust proxy', 1);
 const RedisStore = connectRedis(session)
 
+const primary_endpoint = process.env.PRIMARY_ENDPOINT;
+
 //Configure redis client
 const redisClient = redis.createClient({
-  host: 'testredissaddam.5lwcbq.ng.0001.use1.cache.amazonaws.com',
+  host: primary_endpoint,
   port: 6379
 })
 
