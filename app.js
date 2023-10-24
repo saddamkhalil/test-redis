@@ -50,6 +50,8 @@ app.get('/', (req, res) => {
     <div>
       Stored value in Redis: ${req.session.value || 'No value stored yet.'}
     </div>
+    <br />
+    <a href="/clear-session">Clear Session</a>
   `);
 });
 
@@ -57,6 +59,18 @@ app.get('/', (req, res) => {
 app.post('/store', (req, res) => {
   req.session.value = req.body.value;  // Store the value in Redis session
   res.redirect('/');  // Redirect back to root route
+});
+
+// Endpoint to clear the session
+app.get('/clear-session', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.error("Failed to clear session:", err);
+      res.status(500).send('Failed to clear session');
+      return;
+    }
+    res.redirect('/');
+  });
 });
 
 app.use((err, req, res, next) => {
